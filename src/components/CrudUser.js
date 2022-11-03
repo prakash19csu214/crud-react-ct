@@ -51,7 +51,7 @@ const CrudUser = () => {
 			<h3>New user</h3>
 			<Form postUser={postUser} />
 			<div className='all-users'>
-				<h3>All users</h3>
+				<h3 style={{"float":"left"}}>USERS</h3>
 				<Table
 					users={users}
 					setUsers={setUsers}

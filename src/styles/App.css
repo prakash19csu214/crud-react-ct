@@ -2,8 +2,8 @@
   --background-body: #E5E5E5;
   --background-content: #1D1D1D;
   --text-color: #292929;
-  --primary-color: #4DFF7C;
-  --second-color: #89DDFF;
+  --primary-color: rgb(124, 124, 226);
+  --second-color: rgb(124, 124, 226);
 }
 
 body {
@@ -63,6 +63,7 @@ main {
 form {
   width: fit-content;
   margin: auto;
+  margin-left: 80px;
 }
 
 input, select {
