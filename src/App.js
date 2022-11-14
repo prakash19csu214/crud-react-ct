@@ -10,7 +10,7 @@ function App() {
 				<div className='header__content'>
 					<div className='logo'>
 					<i class="fa fa-solid fa-bars"></i>
-					<a href="/home"><strong>CRUD</strong></a>
+					<a href="/home" className="text-white mx-2"><strong>CRUD</strong></a>
 						
 					</div>
 				</div>

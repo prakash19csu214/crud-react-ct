@@ -13,9 +13,6 @@ const Form = ({ userData = {}, postUser, updateUser }) => {
 
 	const submitUser = e => {
 		e.preventDefault()
-
-		if (user.companiesId === "0") return
-
 		if (userData.id) {
 			updateUser(userData.id, user)
 		} else {
@@ -24,7 +21,7 @@ const Form = ({ userData = {}, postUser, updateUser }) => {
 	}
 
 	return (
-		<form onSubmit={submitUser} className='row'>
+		<form onSubmit={submitUser} className='row mx-5'>
 			<input
 				type='text'
 				name='fname'

@@ -38,7 +38,7 @@ const CrudUser = () => {
 
   const getUsers = () => {
     api
-      .get(`${url}?_expand=companies`)
+      .get(`${url}`)
       .then((res) => {
         setUsers(res);
       })
@@ -57,7 +57,7 @@ const CrudUser = () => {
             <div className="all-users">
               <h3 style={{ float: "left" }}>USERS</h3>
 			  <a href="/form">
-			  <button className="btn btn-lg my-2 float-right">CREATE</button>
+			  <button className="btn btn-lg my-2 float-right text-white">CREATE</button>
 			  </a>
 			  
               <Table
