@@ -125,12 +125,15 @@ margin-top: 3rem;
   color: var(--background-body);
 }
 
-.titles div,
+.titles div{
+  width: 13%;
+  padding: 0.5rem;
+}
 .row input,
 .row select,
   .row div{
-  width: 20%;
-  padding: 0.5rem;
+  width: 18%;
+  padding: 1rem;
 }
 
 .hide-form {

@@ -10,12 +10,13 @@ const Table = ({ users, postUser, updateUser, deleteUser }) => {
 	const Row = ({ user }) => {
 		return (
 			<>
-				<div className='row'>
+				<div className='row container'>
 					<div>{user.id}</div>
+					<img src="{user.avatar}" alt="image"></img>
 					<div>{user.fname}</div>
 					<div>{user.lname}</div>
 					<div>{user.email}</div>
-					<div className='buttons'>
+					<div className='buttons mx-2'>
 						<button onClick={() => showUpdateUser(user.id)} className="btn bg-white border border-primary text-primary rdd-1">Edit</button>
 						<button onClick={() => deleteUser(user.id)} className="btn bg-white border border-danger text-danger">Delete</button>
 					</div>
@@ -29,12 +30,13 @@ const Table = ({ users, postUser, updateUser, deleteUser }) => {
 
 	return (
 		<div className='table'>
-			<div className='titles'>
+			<div className='titles container'>
 				<div>ID</div>
+				<div>Avatar</div>
 				<div>First Name</div>
-				<div>Last Name</div>
-				<div>Email</div>
-				<div>Actions</div>
+				<div className="mx-5">Last Name</div>
+				<div className="mx-3">Email</div>
+				<div className="mx-5">Actions</div>
 			</div>
 			<div className='rows'>
 				{users && users.map(u => <Row user={u} key={u.id} />)}
