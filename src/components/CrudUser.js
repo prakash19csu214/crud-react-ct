@@ -56,7 +56,10 @@ const CrudUser = () => {
           component={() => (
             <div className="all-users">
               <h3 style={{ float: "left" }}>USERS</h3>
-			  <h3>New user</h3>
+			  <a href="/form">
+			  <button className="btn btn-lg my-2 float-right">CREATE</button>
+			  </a>
+			  
               <Table
                 users={users}
                 setUsers={setUsers}
