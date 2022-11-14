@@ -16,8 +16,8 @@ const Table = ({ users, postUser, updateUser, deleteUser }) => {
 					<div>{user.lname}</div>
 					<div>{user.email}</div>
 					<div className='buttons'>
-						<button onClick={() => showUpdateUser(user.id)}>Update</button>
-						<button onClick={() => deleteUser(user.id)}>Delete</button>
+						<button onClick={() => showUpdateUser(user.id)} className="btn bg-white border border-primary text-primary rdd-1">Edit</button>
+						<button onClick={() => deleteUser(user.id)} className="btn bg-white border border-danger text-danger">Delete</button>
 					</div>
 				</div>
 				<div className={`hide-form show-form-${user.id}`}>

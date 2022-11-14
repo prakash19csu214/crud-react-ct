@@ -87,10 +87,13 @@ button {
   font-weight: bold;
 }
 
+.rdd-1{
+  margin-left: 50px;
+}
+
 .buttons {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   gap: 0.5rem;
 }
 
