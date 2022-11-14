@@ -1,5 +1,6 @@
 import React from "react";
 import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from "react-dom";
 import App from "./App";
 

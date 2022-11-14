@@ -1,12 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
       "fname": "Vijay",
       "lname": "Kumar",
-      "username": "vijay.kumar@celebaltech.com",
       "email": "vijay.kumar@celebaltech.com",
-      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png"
+      "id": 1
     },
     {
       "id": 2,

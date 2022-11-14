@@ -1,67 +1,76 @@
-import React, { useState, useEffect } from "react"
-import Form from "./Form"
-import Table from "./Table"
+import React, { useState, useEffect } from "react";
+import Form from "./Form";
+import Table from "./Table";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import { httpHelper } from "../helpers/httpHelper"
+import { httpHelper } from "../helpers/httpHelper";
 
 const CrudUser = () => {
-	const [users, setUsers] = useState(null)
+  const [users, setUsers] = useState(null);
 
-	const url = "http://localhost:5000/users"
-	const api = httpHelper()
+  const url = "http://localhost:5000/users";
+  const api = httpHelper();
 
-	useEffect(() => {
-		getUsers()
-	}, [])
+  useEffect(() => {
+    getUsers();
+  }, []);
 
-	const postUser = user => {
-		api
-			.post(`${url}`, { body: user })
-			.then(res => getUsers())
-			.catch(err => console.log(err))
-	}
+  const postUser = (user) => {
+    api
+      .post(`${url}`, { body: user })
+      .then((res) => getUsers())
+      .catch((err) => console.log(err));
+  };
 
-	const updateUser = (id, user) => {
-		api
-			.put(`${url}/${id}`, { body: user })
-			.then(res => getUsers())
-			.catch(err => console.log(err))
-	}
+  const updateUser = (id, user) => {
+    api
+      .put(`${url}/${id}`, { body: user })
+      .then((res) => getUsers())
+      .catch((err) => console.log(err));
+  };
 
-	const deleteUser = id => {
-		api
-			.del(`${url}/${id}`, {})
-			.then(res => getUsers())
-			.catch(err => console.log(err))
-	}
+  const deleteUser = (id) => {
+    api
+      .del(`${url}/${id}`, {})
+      .then((res) => getUsers())
+      .catch((err) => console.log(err));
+  };
 
-	const getUsers = () => {
-		api
-			.get(`${url}?_expand=companies`)
-			.then(res => {
-				setUsers(res)
-			})
-			.catch(err => console.log(err))
-	}
+  const getUsers = () => {
+    api
+      .get(`${url}?_expand=companies`)
+      .then((res) => {
+        setUsers(res);
+      })
+      .catch((err) => console.log(err));
+  };
 
-	if (!users) return null
+  if (!users) return null;
 
-	return (
-		<>
-			<h3>New user</h3>
-			<Form postUser={postUser} />
-			<div className='all-users'>
-				<h3 style={{"float":"left"}}>USERS</h3>
-				<Table
-					users={users}
-					setUsers={setUsers}
-					postUser={postUser}
-					updateUser={updateUser}
-					deleteUser={deleteUser}
-				/>
-			</div>
-		</>
-	)
-}
+  return (
+    <>
+      <Switch>
+        <Route path="/form" component={() => <Form postUser={postUser} />} />
+        <Route
+          path="/home"
+          component={() => (
+            <div className="all-users">
+              <h3 style={{ float: "left" }}>USERS</h3>
+			  <h3>New user</h3>
+              <Table
+                users={users}
+                setUsers={setUsers}
+                postUser={postUser}
+                updateUser={updateUser}
+                deleteUser={deleteUser}
+              />
+            </div>
+          )}
+        />
+		<Redirect to="/home" />
+      </Switch>
+    </>
+  );
+};
 
-export default CrudUser
+export default CrudUser;

@@ -1,8 +1,10 @@
 import CrudUser from "./components/CrudUser"
 import "./styles/App.css"
+import {BrowserRouter} from "react-router-dom"
 
 function App() {
 	return (
+		<BrowserRouter>
 		<>
 			<header>
 				<div className='header__content'>
@@ -16,6 +18,7 @@ function App() {
 				<CrudUser />
 			</main>
 		</>
+		</BrowserRouter>
 	)
 }
 
