@@ -8,11 +8,13 @@ const Table = ({ users, updateUser, deleteUser }) => {
 	}
 
 	const Row = ({ user }) => {
+		const logo = user.avatar
+
 		return (
 			<>
 				<div className='row container'>
 					<div>{user.id}</div>
-					<img src="{user.avatar}" alt="image"></img>
+					<img src={logo} alt="image" className="avatar"></img>
 					<div>{user.fname}</div>
 					<div>{user.lname}</div>
 					<div>{user.email}</div>

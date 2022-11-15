@@ -75,7 +75,8 @@
       "fname": "Cat 23",
       "lname": "Gato 3",
       "email": "cat.gato3@celebaltech.com",
-      "id": 10
+      "id": 10,
+      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png"
     }
   ]
 }
