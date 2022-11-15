@@ -55,15 +55,13 @@ const CrudUser = () => {
           path="/home"
           component={() => (
             <div className="all-users">
-              <h3 style={{ float: "left", color: "rgb(54, 54, 122)" }}>USERS</h3>
+              <h3 style={{ float: "left", color: "rgb(54, 54, 122)" }}> <b> USERS </b></h3>
 			  <a href="/form">
-			  <button className="btn btn-lg my-2 float-right text-white">CREATE</button>
+			  <button className="btn btn-lg my-2 float-right text-white"> <b> CREATE </b></button>
 			  </a>
 			  
               <Table
                 users={users}
-                setUsers={setUsers}
-                postUser={postUser}
                 updateUser={updateUser}
                 deleteUser={deleteUser}
               />

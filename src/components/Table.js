@@ -1,7 +1,7 @@
 import React from "react"
 import Form from "./Form"
 
-const Table = ({ users, postUser, updateUser, deleteUser }) => {
+const Table = ({ users, updateUser, deleteUser }) => {
 	const showUpdateUser = id => {
 		const form = document.getElementsByClassName(`show-form-${id}`)
 		form[0].classList.toggle("hide-form")
@@ -22,7 +22,7 @@ const Table = ({ users, postUser, updateUser, deleteUser }) => {
 					</div>
 				</div>
 				<div className={`hide-form show-form-${user.id}`}>
-					<Form userData={user} postUser={postUser} updateUser={updateUser} />
+					<Form userData={user} updateUser={updateUser} />
 				</div>
 			</>
 		)
