@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 const Form = ({ userData = {}, postUser, updateUser }) => {
 	const [user, setUser] = useState({
+		avatar: userData.avatar ?? "",
 		fname: userData.fname ?? "",
 		lname: userData.lname ?? "",
 		email: userData.email ?? "",
@@ -22,6 +23,13 @@ const Form = ({ userData = {}, postUser, updateUser }) => {
 
 	return (
 		<form onSubmit={submitUser} className='row mx-5'>
+			<input
+				type='text'
+				name='avatar'
+				value={user.avatar}
+				placeholder='Avatar'
+				onChange={e => handleValue(e)}
+			/>
 			<input
 				type='text'
 				name='fname'
